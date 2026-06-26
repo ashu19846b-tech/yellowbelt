@@ -151,6 +151,8 @@ cargo test
 ```
 
 **Result:** ✅ **7 / 7 tests passing**
+<img width="1920" height="1080" alt="test-results" src="https://github.com/user-attachments/assets/c4a30d73-a0b5-42c0-b923-15e45e11350d" />
+
 
 ---
 
@@ -185,7 +187,8 @@ docs: add live demo, contract address, transaction proof and screenshots
 ---
 
 ## ✅ Tests Passing (7/7)
-![Tests Passing](./test-results.png)
+<img width="1920" height="1080" alt="test-results" src="https://github.com/user-attachments/assets/34e1bbe9-d7c1-4860-ba96-8557368081c9" />
+
 
 ---
 
