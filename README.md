@@ -51,12 +51,6 @@ https://youtu.be/mpj_mVS9BTk
 
 **Network:** Stellar Testnet
 
-**Contract Address**
-
-```text
-CCYUDN6DSM4YJ3KZ7NSGFSK4UWI76JTCYI6VPVH3WH6MX44T7C2PNB2K
-```
-
 ### Contract Functions
 
 * `initialize()`
@@ -68,19 +62,15 @@ CCYUDN6DSM4YJ3KZ7NSGFSK4UWI76JTCYI6VPVH3WH6MX44T7C2PNB2K
 
 ---
 
-## ✅ Transaction Proof
-
-**Transaction Hash**
-
-```text
-9b220fbf5e2c268403830452d08d1de3e5586eee25371a543ec234ad604a83c3
-```
-
 **Explorer**
 
 https://stellar.expert/explorer/testnet/tx/9b220fbf5e2c268403830452d08d1de3e5586eee25371a543ec234ad604a83c3
 
----
+**Contract Address:** `CCYUDN6JWI7AMYGE7GL6EPDUN6ITAAPDUGM4GKXZQ4PK63C6RK5XJ77KS`
+
+**Transaction Hash:** `9b220fbf5e2c268403830452d08d1de3e5586eee25371a543ec234ad604a83c3`
+
+**View on Stellar Expert:** https://stellar.expert/explorer/testnet/tx/9b220fbf5e2c268403830452d08d1de3e5586eee25371a543ec234ad604a83c3
 
 ## 📸 Screenshots
 <img width="1920" height="1080" alt="Screenshot 2026-06-26 142944" src="https://github.com/user-attachments/assets/ef06b18f-c646-42e1-807d-2eca974535a0" />
