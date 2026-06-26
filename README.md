@@ -5,9 +5,7 @@ A fully on-chain live polling dApp built with **Soroban**, **Stellar Testnet**, 
 ---
 
 ## 🔗 Live Demo
-
-https://orange-belt-deploy-ra74.vercel.app
-
+https://yellowbelt2.vercel.app/
 ## 📹 Demo Video
 
 https://youtu.be/mpj_mVS9BTk
@@ -85,14 +83,13 @@ https://stellar.expert/explorer/testnet/tx/9b220fbf5e2c268403830452d08d1de3e5586
 ---
 
 ## 📸 Screenshots
-
-* Wallet Options
-* Wallet Connected
-* Transaction Status
-* Successful Vote
-* Tests Passing (7/7)
-* User Rejected Transaction
-* Insufficient Balance Error
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 142944" src="https://github.com/user-attachments/assets/ef06b18f-c646-42e1-807d-2eca974535a0" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 142805" src="https://github.com/user-attachments/assets/3efc4a51-3e08-401b-8ca7-c39376195915" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 142827" src="https://github.com/user-attachments/assets/f3dbc1c0-e993-4f2e-b7da-1066c458abab" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 142836" src="https://github.com/user-attachments/assets/18c1815e-5f83-43be-8027-c469af6dcc6d" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 142904" src="https://github.com/user-attachments/assets/41913095-960c-44e8-b816-589a62ef0777" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 125758" src="https://github.com/user-attachments/assets/9f3b9625-539b-4302-9330-5f1f53b6ff01" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 125841" src="https://github.com/user-attachments/assets/b72fdb20-c385-4f91-9aa5-885f5cf69ffa" />
 
 ---
 
