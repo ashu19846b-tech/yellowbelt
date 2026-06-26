@@ -1,105 +1,189 @@
-# Live Poll dApp
+# ⭐ StarVote — Stellar Live Poll
 
-A clean, production-ready dApp featuring a Soroban smart contract deployed on Stellar Testnet with a Next.js frontend demonstrating multi-wallet support, transaction status tracking, and real-time event updates.
+A fully on-chain live polling dApp built with **Soroban**, **Stellar Testnet**, and **Next.js 16**. Users connect their wallet, cast one on-chain vote, and view live poll results with real-time updates.
 
-## 🚀 Smart Contract
+---
 
-**Deployed Address**: `CCYUDN6DSM4YJ3KZ7NSGFSK4UWI76JTCYI6VPVH3WH6MX44T7C2PNB2K`  
-**Network**: Stellar Testnet ("Test SDF Network ; September 2015")
+## 🔗 Live Demo
 
-### Contract Features
-- `vote(option: u32, voter: Address)` - Cast a vote for a poll option
-- `get_results()` - Retrieve current poll results
-- Anti-double-vote protection via persistent storage
-- Contract events emitted on each vote cast
+https://orange-belt-deploy-ra74.vercel.app
 
-### Storage
-- Persistent `Vec<u32>` for vote counts per option
-- Per-voter tracking to prevent multiple votes
+## 📹 Demo Video
 
-## 💻 Frontend
+https://youtu.be/mpj_mVS9BTk
 
-**Tech Stack**: Next.js 16, React 19, @lumenkit/stellar-wallets, Tailwind CSS 4
+---
 
-### Components
+## 🚀 Features
 
-#### WalletConnect (`src/components/WalletConnect.tsx`)
-- "Connect Wallet" button
-- Vote buttons (Option A / Option B)
-- Real-time transaction status display
-- Error messages for wallet issues, rejection, and insufficient balance
+* ✅ Multi-wallet integration (StellarWalletsKit)
+* ✅ Soroban smart contract deployed on Stellar Testnet
+* ✅ One vote per wallet (on-chain validation)
+* ✅ Contract interaction from the frontend
+* ✅ Real-time poll result synchronization
+* ✅ 4-step transaction status tracker:
 
-#### ActivityFeed (`src/components/ActivityFeed.tsx`)
-- Polls contract events every 5 seconds
-- Displays live feedback submissions
-- Auto-updates when new votes are cast
+  * Signing
+  * Broadcasting
+  * Confirming
+  * Complete
+* ✅ Error handling:
+
+  * Wallet not installed
+  * Transaction rejected
+  * Insufficient balance / network error
+* ✅ localStorage caching (30-second TTL)
+* ✅ 7/7 Soroban contract tests passing
+
+---
+
+## 💻 Tech Stack
+
+| Layer          | Technology                              |
+| -------------- | --------------------------------------- |
+| Frontend       | Next.js 16, TypeScript, Tailwind CSS v4 |
+| Smart Contract | Rust + Soroban SDK                      |
+| Wallet         | StellarWalletsKit                       |
+| Network        | Stellar Testnet                         |
+| Deployment     | Vercel                                  |
+
+---
+
+## 📜 Smart Contract
+
+**Network:** Stellar Testnet
+
+**Contract Address**
+
+```text
+CCYUDN6DSM4YJ3KZ7NSGFSK4UWI76JTCYI6VPVH3WH6MX44T7C2PNB2K
+```
+
+### Contract Functions
+
+* `initialize()`
+* `vote()`
+* `get_results()`
+* `get_options()`
+* `get_question()`
+* `has_voted()`
+
+---
 
 ## ✅ Transaction Proof
 
+**Transaction Hash**
+
+```text
+9b220fbf5e2c268403830452d08d1de3e5586eee25371a543ec234ad604a83c3
 ```
+
+**Explorer**
+
 https://stellar.expert/explorer/testnet/tx/9b220fbf5e2c268403830452d08d1de3e5586eee25371a543ec234ad604a83c3
-```
 
-**Status**: ✅ Success  
+---
 
-##screenshot:
-![transaction_status](https://github.com/user-attachments/assets/0bc2d9c1-20d4-4cd0-919e-0b6e521692b6)
-![transaction_status](https://github.com/user-attachments/assets/39a7101b-27a7-4f15-80ab-135a707e47d0)
-![walletconnected](https://github.com/user-attachments/assets/f7794528-d12a-4528-af6a-f532154aa7ad)
-![error-connection-rejected](https://github.com/user-attachments/assets/84bcc1de-1330-4b87-b2f5-1ebbc3b25db6)
-![error-insufficient-balance](https://github.com/user-attachments/assets/a429304c-98e5-428d-9f4e-09b3f0dd9437)
-![wallet-connected](https://github.com/user-attachments/assets/864a64f4-4acb-4a5e-ba71-664df3baea68)
+## 📸 Screenshots
 
+* Wallet Options
+* Wallet Connected
+* Transaction Status
+* Successful Vote
+* Tests Passing (7/7)
+* User Rejected Transaction
+* Insufficient Balance Error
 
+---
 
-
-
-
-
-
-
-## 🛠️ Setup & Development
+## ⚙️ Setup
 
 ### Prerequisites
-- Node.js 18+
-- npm or yarn
-- Stellar CLI (for contract management)
-- A funded Stellar testnet account
+
+* Node.js 20+
+* Rust
+* Stellar CLI
+* StellarWalletsKit-supported wallet
 
 ### Installation
 
 ```bash
+git clone https://github.com/Nandini-Jadhav1/orange-belt-deploy.git
+
+cd orange-belt-deploy/contracts/hello-world/live-poll-ui
+
+npm install
+
+npm run dev
+```
+
+Create `.env.local`
+
+```env
+NEXT_PUBLIC_CONTRACT_ID=CCYUDN6DSM4YJ3KZ7NSGFSK4UWI76JTCYI6VPVH3WH6MX44T7C2PNB2K
+NEXT_PUBLIC_RPC_URL=https://soroban-testnet.stellar.org
+```
+
+---
+
+## 🚀 Deployment
+
+```bash
 cd contracts/hello-world
+
 stellar contract build
 
-cd ../../live-poll-ui
-npm install
-npm run dev
+stellar contract deploy
 
-# Open http://localhost:3000 in your browser
+stellar contract invoke -- initialize
 ```
 
-## 📋 Level 2 Submission Checklist
+Deploy the frontend to Vercel and set the contract ID as an environment variable.
 
-- [x] Soroban smart contract deployed to testnet
-- [x] Multi-wallet integration (LumenKit: Freighter, Albedo, and 8+ others)
-- [x] Contract called from frontend (vote function)
-- [x] Transaction status visible (pending/success/failed)
-- [x] Error handling for 3+ scenarios
-- [x] Real-time updates via contract events
-- [x] Live activity feed polling events every 5 seconds
-- [x] 2+ meaningful Git commits
-- [x] README with contract address and proof
+---
 
+## 🧪 Running Tests
 
+```bash
+cd contracts/hello-world
 
-
-## 🎯 Git Commits
-
-```
-commit 1: feat: add multi-wallet connection using StellarWalletsKit
-commit 2: feat: add real-time contract event listener and live feed
-commit 3: fix: simplify contract/events for demo ui - server running
+cargo test
 ```
 
-## 🎨 Wallets
+**Result:** ✅ **7 / 7 tests passing**
+
+---
+
+## 📌 Commit History
+
+```text
+feat: complete StarVote dApp with Soroban smart contract
+test: add 7 Soroban contract tests
+feat: add loading states, transaction tracker and caching
+docs: complete README with setup and deployment
+docs: add live demo, contract address, transaction proof and screenshots
+```
+
+---
+
+## ✅ Submission Checklist
+
+* ✔ Public GitHub Repository
+* ✔ README with setup instructions
+* ✔ Live Demo
+* ✔ Demo Video
+* ✔ Multi-wallet integration
+* ✔ Smart contract deployed on Testnet
+* ✔ Contract called from frontend
+* ✔ Transaction status visible
+* ✔ Three error types handled
+* ✔ Deployed contract address
+* ✔ Transaction hash (verifiable on Stellar Expert)
+* ✔ Screenshots (wallet, transaction, errors, tests)
+* ✔ Minimum 2+ meaningful commits
+
+---
+
+## 📄 License
+
+MIT © 2026
